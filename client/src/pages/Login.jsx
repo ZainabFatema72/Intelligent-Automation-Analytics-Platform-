@@ -11,7 +11,7 @@ export default function Login() {
     e.preventDefault();
     try {
       // Python server se baat karne ki koshish
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const res = await axios.post('https://intelligent-automation-analytics-platform.onrender.com/api/auth/login', { email, password });
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('username', res.data.username);
       navigate('/dashboard'); // Login successful toh seedhe dashboard par bhejo

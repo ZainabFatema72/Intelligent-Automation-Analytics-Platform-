@@ -14,7 +14,7 @@ export default function Predictions() {
 
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/ml/predict', {
+      const res = await axios.post('https://intelligent-automation-analytics-platform.onrender.com/api/ml/predict', {
         file_name: activeFile,
         target_column: targetColumn
       });

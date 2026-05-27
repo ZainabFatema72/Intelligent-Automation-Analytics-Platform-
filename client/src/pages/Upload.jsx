@@ -18,7 +18,7 @@ export default function Upload() {
     setUploading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/data/upload', formData, {
+      const res = await axios.post('https://intelligent-automation-analytics-platform.onrender.com/api/data/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       setResults(res.data);
