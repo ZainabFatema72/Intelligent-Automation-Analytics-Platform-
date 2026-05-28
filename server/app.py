@@ -20,10 +20,11 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 # Database Connection Function
 def get_db_connection():
     return pymysql.connect(
-        host='localhost',
-        user='root',
-        password='root123', # <-- AGAR AAPKA MYSQL PASSWORD ALAG HAI TOH YAHAN BADLO!
-        database='intelligence_platform',
+        host=os.environ.get('DB_HOST'),
+        port=int(os.environ.get('DB_PORT', 3306)),
+        user=os.environ.get('DB_USER'),
+        password=os.environ.get('DB_PASSWORD'),
+        database=os.environ.get('DB_NAME'),
         cursorclass=pymysql.cursors.DictCursor
     )
 # Database Connection Function ke neeche ye dalo:
